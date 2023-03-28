@@ -10,16 +10,14 @@ router.get("/", async (req, res) => {
     const [module] = await pool.query(
       "SELECT * FROM `coursemodule` WHERE courseId=1"
     );
-    const courseDetails = {
+    res.json({
       details: details,
       module: module,
-    };
-    res.json(courseDetails);
+    });
   } catch (error) {
     console.error(error);
     res.status(500).send("Internal Server Error");
   }
-  // res.send("got the router")
 });
 
 module.exports = router;

@@ -16,8 +16,17 @@ app.use(bodyParser.json());
 const coursesRoute = require("./courses");
 app.use("/courses", coursesRoute);
 
+//course details route
 const coursedetailsRoute = require("./coursedetails");
 app.use("/coursedetails", coursedetailsRoute);
+
+//services route
+const servicesRoute = require("./services");
+app.use("/services", servicesRoute);
+
+//instructors route
+const instructorsRoute = require("./instructors");
+app.use("/instructors", instructorsRoute);
 
 // Define your routes
 app.get("/", (req, res) => {
